@@ -44,7 +44,7 @@ void add_element(node **start,node **last,node **temp)
 {
     int dat;
     printf("\nenter the data to be inserted");
-    scanf("%d",dat);
+    scanf("%d",&dat);
     if((*start)==NULL)
     {
         (*start)=(node*)malloc(sizeof(node));

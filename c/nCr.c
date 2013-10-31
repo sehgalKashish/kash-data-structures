@@ -1,11 +1,9 @@
 //nCr using recursion......
-#include<conio.h>
 #include<stdio.h>
 int fact(int m);
 void main()
 {
 	  long int n,r,x,y,z,val,v;
-	  clrscr();
 	  printf("enter the value of n:");
 	  scanf("\n%d",&n);
 	  printf("\nenter the value of r:");
@@ -23,7 +21,7 @@ void main()
 			val=x/(y*z);
 			printf("the value of nCr is :%d",val);
 	  }
-	  getch();
+	  //getch();
 }
 fact(m)
 {
