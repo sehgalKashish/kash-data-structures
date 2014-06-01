@@ -7,8 +7,8 @@ using namespace std;
 int main()
 {
 	//typedef multimap<int,string> intStringMultiMap;//duplicate enteries are allowed. stored in order
-	//typedef map<int,string> intStringMultiMap;//duplicate enteries not allowed.
-	typedef map<string,string> intStringMultiMap;//duplicate enteries not allowed.
+	typedef map<int,string> intStringMultiMap;//duplicate enteries not allowed.
+	//typedef map<string,string> intStringMultiMap;//duplicate enteries not allowed.
 	intStringMultiMap mm;
 	
 	mm.insert(make_pair(3,"tagged"));	//stored according to first element.sorted order.

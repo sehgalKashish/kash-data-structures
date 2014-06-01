@@ -1,5 +1,4 @@
-/*Adj matrix representation
-*/
+/*Adj matrix representation*/
 
 #include<iostream>
 #include<stdio.h>
