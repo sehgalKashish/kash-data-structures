@@ -1,0 +1,23 @@
+
+
+
+
+   There is no form of IPC that is simpler than pipes. Implemented on every flavor of Unix, pipe()
+    and fork() make up the functionality behind the “|” in “ls | more”. They are marginally useful for cool
+    things, but are a good way to learn about basic methods of IPC.
+    Since they're so very very easy, I shant spent much time on them. We'll just have some examples
+    and stuff.
+    4.1. “These pipes are clean!”
+    Wait! Not so fast. I might need to define a “file descriptor” at this point. Let me put it this way:
+    you know about “FILE*” from stdio.h, right? You know how you have all those nice functions like
+    fopen(), fclose(), fwrite(), and so on? Well, those are actually high level functions that are
+    implemented using file descriptors, which use system calls such as open(), creat(), close(), and
+    write(). File descriptors are simply ints that are analogous to FILE*'s in stdio.h.
+    For example, stdin is file descriptor “0”, stdout is “1”, and stderr is “2”. Likewise, any files
+    you open using fopen() get their own file descriptor, although this detail is hidden from you. (This file
+            descriptor can be retrived from the FILE* by using the fileno() macro from stdio.h.)
+    How a pipe is organized.
+    Basically, a call to the pipe() function returns a pair of file descriptors. One of these descriptors
+    is connected to the write end of the pipe, and the other is connected to the read end. Anything can be
+    written to the pipe, and read from the other end in the order it came in. On many systems, pipes will fill
+    up after you write about 10K to them without reading anything out.
