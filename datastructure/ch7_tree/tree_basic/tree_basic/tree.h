@@ -1,5 +1,6 @@
 #include<iostream>
 #include<stack>
+#include<queue>
 
 struct node
 {
@@ -15,13 +16,17 @@ private:
 public:
 	tree(){}
 	node* insert(int data);
-	void preorder(node *root);/*Traverse the tree in prre order*/
+	void preorder(node *root);/*Traverse the tree in pre order*/
 
 	void iterativePreOrderTraversel(node *root);//traverse preorder, iteratively, using stack...!!!
 
-	void inorder(node *root);
+	void inorder(node *root);/* Traverse the tree in in order*/
 
 	void postorder(node *root);
+
+	void levelOrderTraversel(node *root);
+
+	void zigZagTraversel(node *root);
 
 	int treeHeight(node *root);/*finds the max height of tree*/
 

@@ -30,6 +30,11 @@ int main()
 	//cout<<endl<<"Max Height is : "<<t1.treeHeight(root)<<endl;
 	
 	//cout<<"\n The size of tree is : "<<t1.tree_size(root);
+	cout<<"\n The tree elements in level order are: ";
+	t1.levelOrderTraversel(root);
+
+	cout<<"\n The tree elements in Zig-Zag order are: ";
+	t1.zigZagTraversel(root);
 	//t1.del_tree(root);
 	//cout<<"\n diameter of tree is : "<<t1.diameterOfTree(root, &height);
 	//t1.printAllAncestorNode(root,20);

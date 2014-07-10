@@ -59,6 +59,60 @@ void tree::postorder(struct node *root)
 	}
 }
 
+/**
+* Level order traversel using STL queue.
+**/
+void tree::levelOrderTraversel(node *root)
+{
+	if(root == NULL)
+		return;
+	queue<node*> q;
+	q.push(root);
+	while(!q.empty())
+	{
+		struct node* temp;
+		temp = q.front();
+		cout<< temp->data<<" ";
+		q.pop();
+		if(temp->left)
+			q.push(temp->left);
+		if(temp->right)
+			q.push(temp->right);
+	}
+}
+
+void tree::zigZagTraversel(node *root)
+{
+	struct node* currentLevel, nextLevel;
+	int rightToLeft = 1;
+	if(root == NULL)
+		return;
+	queue<node *> myqueue;
+	myqueue.push(root);
+	while(!myqueue.empty())
+	{
+		struct node* temp;
+		currentLevel = myqueue.front();
+		cout<<" "<<currentLevel->data;
+		myqueue.pop();
+		if(rightToLeft)
+		{
+			if(currentLevel->right)
+				myqueue.push(currentLevel->right);
+			if(currentLevel->left)
+				myqueue.push(currentLevel->left);
+		}
+		else
+		{
+			if(temp->left)
+				myqueue.push(temp->left);
+			if(temp->right)
+				myqueue.push(temp->right);
+		}
+		rightToLeft = 1 - rightToLeft;
+	}
+}
+
 int tree::treeHeight(struct node *root)
 {
 	if(root==NULL)
